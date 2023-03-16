@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="332.4" Width="352.866">
     <Grid>
-        <Button x:Name="btnAllClear" Content="清除" HorizontalAlignment="Left" Height="26" Margin="10,258,0,0" VerticalAlignment="Top" Width="86" FontSize="15"/>
+        <Button x:Name="btnAllClear" Content="清除" HorizontalAlignment="Left" Height="26" Margin="10,258,0,0" VerticalAlignment="Top" Width="86" FontSize="15" Click="btnAllClear_Click"/>
         <Label Content="公分" HorizontalAlignment="Left" Height="29" Margin="10,10,0,0" VerticalAlignment="Top" Width="69" FontSize="18"/>
         <Label Content="公尺" HorizontalAlignment="Left" Height="29" Margin="10,44,0,0" VerticalAlignment="Top" Width="69" FontSize="18"/>
         <Label Content="公里" HorizontalAlignment="Left" Height="29" Margin="10,78,0,0" VerticalAlignment="Top" Width="69" FontSize="18"/>
@@ -21,7 +21,7 @@
         <TextBox x:Name="txtIn" HorizontalAlignment="Left" Height="29" Margin="96,112,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="250" FontSize="18" KeyUp="txtIn_KeyUp"/>
         <TextBox x:Name="txtFt" HorizontalAlignment="Left" Height="29" Margin="96,146,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="250" FontSize="18" KeyUp="txtFt_KeyUp"/>
         <TextBox x:Name="txtYard" HorizontalAlignment="Left" Height="29" Margin="96,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="250" FontSize="18" KeyUp="txtYard_KeyUp"/>
-        <TextBox x:Name="txtInfo" HorizontalAlignment="Left" Height="29" Margin="96,214,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="250" FontSize="18"/>
+        <TextBox x:Name="txtInfo" HorizontalAlignment="Left" Height="29" Margin="96,214,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="250" FontSize="18" />
 
     </Grid>
 </Window>
