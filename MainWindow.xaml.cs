@@ -44,5 +44,60 @@ namespace P3_Length_Calculator
             txtYard.Text = string.Format("{0:0.#####}", douCM / 91.44);
             //公分換碼(1碼≈91.44公分)
         }
+
+        private void txtM_KeyUp(object sender, KeyEventArgs e)
+        {
+            double douM;
+            douM = Convert.ToDouble(txtM.Text);
+            txtCM.Text = string.Format("{0:0.#####}", douM * 100);
+            txtKM.Text = string.Format("{0:0.#####}", douM / 1000);
+            txtIn.Text = string.Format("{0:0.#####}", douM * 39.37);
+            txtFt.Text = string.Format("{0:0.#####}", douM * 3.28);
+            txtYard.Text = string.Format("{0:0.#####}", douM * 1.09);
+        }
+
+        private void txtKM_KeyUp(object sender, KeyEventArgs e)
+        {
+            double douKM;
+            douKM = Convert.ToDouble(txtKM.Text);
+            txtCM.Text = string.Format("{0:0.#####}", douKM * 100000);
+            txtM.Text = string.Format("{0:0.#####}", douKM * 1000);
+            txtIn.Text = string.Format("{0:0.#####}", douKM * 39370);
+            txtFt.Text = string.Format("{0:0.#####}", douKM * 3280.84);
+            txtYard.Text = string.Format("{0:0.#####}", douKM * 1093.6);
+        }
+
+        private void txtIn_KeyUp(object sender, KeyEventArgs e)
+        {
+            double douIn;
+            douIn = Convert.ToDouble(txtIn.Text);
+            txtCM.Text = string.Format("{0:0.#####}", douIn * 2.54);
+            txtM.Text = string.Format("{0:0.#####}", douIn * 0.025);
+            txtKM.Text = string.Format("{0:0.##########}", douIn * 0.00003);
+            txtFt.Text = string.Format("{0:0.#####}", douIn * 0.083);
+            txtYard.Text = string.Format("{0:0.#####}", douIn * 0.027);
+        }
+
+        private void txtFt_KeyUp(object sender, KeyEventArgs e)
+        {
+            double douFt;
+            douFt = Convert.ToDouble(txtFt.Text);
+            txtCM.Text = string.Format("{0:0.#####}", douFt * 30.48);
+            txtM.Text = string.Format("{0:0.#####}", douFt * 0.30);
+            txtKM.Text = string.Format("{0:0.##########}", douFt * 0.00031);
+            txtIn.Text = string.Format("{0:0.#####}", douFt * 12);
+            txtYard.Text = string.Format("{0:0.#####}", douFt * 0.33);
+        }
+
+        private void txtYard_KeyUp(object sender, KeyEventArgs e)
+        {
+            double douYard;
+            douYard = Convert.ToDouble(txtYard.Text);
+            txtCM.Text = string.Format("{0:0.#####}", douYard * 91.44);
+            txtM.Text = string.Format("{0:0.#####}", douYard * 0.91);
+            txtKM.Text = string.Format("{0:0.##########}", douYard * 0.00091);
+            txtIn.Text = string.Format("{0:0.#####}", douYard * 36);
+            txtFt.Text = string.Format("{0:0.#####}", douYard * 3);
+        }
     }
 }
