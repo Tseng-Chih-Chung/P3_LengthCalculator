@@ -38,7 +38,7 @@ namespace P3_Length_Calculator
                 txtIn.Text = string.Format("{0:0.#####}", douOutput / 2.54);
                 txtFt.Text = string.Format("{0:0.#####}", douOutput / 30.48);
                 txtYard.Text = string.Format("{0:0.#####}", douOutput / 91.44);
-                txtInfo.Text = "";
+                txtInfo.Text = "運算有誤差 勿全盤相信";
             }
             else
             {
@@ -62,7 +62,7 @@ namespace P3_Length_Calculator
                 txtIn.Text = string.Format("{0:0.#####}", douOutput * 39.37);
                 txtFt.Text = string.Format("{0:0.#####}", douOutput * 3.28);
                 txtYard.Text = string.Format("{0:0.#####}", douOutput * 1.09);
-                txtInfo.Text = "";
+                txtInfo.Text = "運算有誤差 勿全盤相信";
             }
             else
             {
@@ -86,7 +86,7 @@ namespace P3_Length_Calculator
                 txtIn.Text = string.Format("{0:0.#####}", douOutput * 39370);
                 txtFt.Text = string.Format("{0:0.#####}", douOutput * 3280.84);
                 txtYard.Text = string.Format("{0:0.#####}", douOutput * 1093.6);
-                txtInfo.Text = "";
+                txtInfo.Text = "運算有誤差 勿全盤相信";
             }
             else
             {
@@ -99,7 +99,29 @@ namespace P3_Length_Calculator
                 txtYard.Text = "";
             }
         }
-
+private void txtFt_KeyUp(object sender, KeyEventArgs e)
+        {
+            strInput = txtFt.Text;
+            if (double.TryParse(strInput, out douOutput) == true)
+            {
+                txtCM.Text = string.Format("{0:0.#####}", douOutput * 30.48);
+                txtM.Text = string.Format("{0:0.#####}", douOutput * 0.30);
+                txtKM.Text = string.Format("{0:0.##########}", douOutput * 0.00031);
+                txtIn.Text = string.Format("{0:0.#####}", douOutput * 12);
+                txtYard.Text = string.Format("{0:0.#####}", douOutput * 0.33);
+                txtInfo.Text = "運算有誤差 勿全盤相信";
+            }
+            else
+            {
+                txtInfo.Text = "錯誤 只能輸入數字";
+                txtCM.Text = "";
+                txtM.Text = "";
+                txtKM.Text = "";
+                txtIn.Text = "";
+                txtFt.Text = "";
+                txtYard.Text = "";
+            }
+        }
         private void txtIn_KeyUp(object sender, KeyEventArgs e)
         {
             strInput = txtIn.Text;
@@ -110,7 +132,7 @@ namespace P3_Length_Calculator
                 txtKM.Text = string.Format("{0:0.##########}", douOutput * 0.00003);
                 txtFt.Text = string.Format("{0:0.#####}", douOutput * 0.083);
                 txtYard.Text = string.Format("{0:0.#####}", douOutput * 0.027);
-                txtInfo.Text = "";
+                txtInfo.Text = "運算有誤差 勿全盤相信";
             }
             else
             {
@@ -124,29 +146,7 @@ namespace P3_Length_Calculator
             }
         }
 
-        private void txtFt_KeyUp(object sender, KeyEventArgs e)
-        {
-            strInput = txtFt.Text;
-            if (double.TryParse(strInput, out douOutput) == true)
-            {
-                txtCM.Text = string.Format("{0:0.#####}", douOutput * 30.48);
-                txtM.Text = string.Format("{0:0.#####}", douOutput * 0.30);
-                txtKM.Text = string.Format("{0:0.##########}", douOutput * 0.00031);
-                txtIn.Text = string.Format("{0:0.#####}", douOutput * 12);
-                txtYard.Text = string.Format("{0:0.#####}", douOutput * 0.33);
-                txtInfo.Text = "";
-            }
-            else
-            {
-                txtInfo.Text = "錯誤 只能輸入數字";
-                txtCM.Text = "";
-                txtM.Text = "";
-                txtKM.Text = "";
-                txtIn.Text = "";
-                txtFt.Text = "";
-                txtYard.Text = "";
-            }
-        }
+        
 
         private void txtYard_KeyUp(object sender, KeyEventArgs e)
         {
@@ -158,7 +158,7 @@ namespace P3_Length_Calculator
                 txtKM.Text = string.Format("{0:0.##########}", douOutput * 0.00091);
                 txtIn.Text = string.Format("{0:0.#####}", douOutput * 36);
                 txtFt.Text = string.Format("{0:0.#####}", douOutput * 3);
-                txtInfo.Text = "";
+                txtInfo.Text = "運算有誤差 勿全盤相信";
             }
             else
             {
